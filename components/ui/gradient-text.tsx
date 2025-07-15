@@ -1,6 +1,6 @@
-import MaskedView from '@react-native-masked-view/masked-view';
+// import MaskedView from '@react-native-masked-view/masked-view';
 import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TextProps } from 'react-native';
 
 interface GradientTextProps extends TextProps {
@@ -16,14 +16,17 @@ export default function GradientText({
   style,
   ...props
 }: GradientTextProps) {
+  const [textWidth, setTextWidth] = useState(0);
+
   const fontMap = {
     Regular: 'Karla-Regular',
     SemiBold: 'Karla-SemiBold',
-
+    Bold: 'Karla-Bold',
   };
 
   return (
     // <MaskedView
+    //   style={{ width: textWidth }}
     //   maskElement={
     //     <Text
     //       {...props}
@@ -32,6 +35,7 @@ export default function GradientText({
     //         { fontSize, fontFamily: fontMap[fontWeight], color: 'black' },
     //         style,
     //       ]}
+    //       onLayout={e => setTextWidth(e.nativeEvent.layout.width)}
     //     >
     //       {text}
     //     </Text>
@@ -41,6 +45,7 @@ export default function GradientText({
         colors={['#D8125A', '#E88AB0', '#CB6190', '#D8125A']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
+        style={{ width: textWidth }}
       >
         <Text
           {...props}
@@ -53,7 +58,7 @@ export default function GradientText({
           {text}
         </Text>
       </LinearGradient>
-    // </MaskedView>
+    // </MaskedView> 
   );
 }
 
