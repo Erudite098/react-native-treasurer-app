@@ -52,15 +52,10 @@ export default function Dashboard() {
                 fontWeight="Regular"
                
               />
+            </View>
 
-</View>
-            
-          
           </GradientCard>
-                 
-        
-
-          
+                   
         </Container> 
 
 
@@ -75,7 +70,7 @@ export default function Dashboard() {
 const styles = StyleSheet.create({
   paymentDashboard: { 
     color: '#D8125A',
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     marginVertical: 18,
     marginLeft: 23, // Align with container padding

@@ -16,6 +16,6 @@ export default function Container({ children, style, ...props }: Props) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 23,  // ⬅️ uniform 23px left and right
-    width: '100%',          // fill parent width
+    // width: '100%',          // fill parent width
   },
 });

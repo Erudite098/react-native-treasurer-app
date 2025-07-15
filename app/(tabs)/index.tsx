@@ -13,7 +13,7 @@ export default function Index() {
 
   const [showSplash, setShowSplash] = useState(true);
 
-  // ✅ Type-safe way to set default font globally
+  // Type-safe way to set default font globally
   if (fontsLoaded) {
     (RNText as any).defaultProps = (RNText as any).defaultProps || {};
     (RNText as any).defaultProps.style = { fontFamily: 'Karla-Regular' };
