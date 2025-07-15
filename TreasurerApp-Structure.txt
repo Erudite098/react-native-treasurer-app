@@ -1,0 +1,24 @@
+components/
+├── buttons/
+	AddButton
+	EditButton
+	DeleteButton
+	CalculatorButton
+│   └── ViewButton.tsx
+│   └── SubmitButton.tsx
+├── cards/
+│   └── ListCard.tsx
+|   └── DetailsCard.tsx
+├── filters/
+│   └── Search.tsx
+| 	Sort.tsx
+| 	Category.tsx
+├── modals/
+│   └── PaymentModal.tsx
+|	PaymentModal.tsx
+├── options/
+│   └── CourseOptions.tsx
+├── ProgressBar.tsx
+
+
+pages

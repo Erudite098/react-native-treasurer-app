@@ -5,24 +5,23 @@ import { StyleSheet, View } from 'react-native';
 
 interface GradientCardProps {
   children?: React.ReactNode; // The content of the card, can be a string, number, element or an array of elements.
-  borderRadius?: number; // The border radius of the card
-
+  borderRadius?: number;
 }
 
 export default function GradientCard({
-  children, //The content of the card, can be a string, number, element or an array of elements.
-  borderRadius = 16, // The border radius of the card, is defined here so that it can be overridden if needed
+  children, 
+  borderRadius = 16, 
   
-}: GradientCardProps) { // The component accepts children and an optional borderRadius prop
+}: GradientCardProps) { 
   return (
-    <LinearGradient // Using LinearGradient from expo-linear-gradient to create a gradient background
+    <LinearGradient 
       colors={['#F4BBD0', '#F2EAED']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={[styles.card, { borderRadius }]}
     > 
       {/* The card is styled with a gradient background and a border radius */}
-      <View style={styles.content}>  //The content of the card is wrapped in a View to allow for flex properties
+      <View style={styles.content}>  
         {children}
       </View>
     </LinearGradient>
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     padding: 20, // Padding inside the card
     marginBottom: 23, // Margin at the bottom to separate from other elements
     flexShrink: 1, // allow the height to grow
-    alignSelf: 'stretch', // important for full width in flex parents
+    // alignSelf: 'stretch', // important for full width in flex parents
     
     // iOS Shadow
     shadowColor: '#000',
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   content: {
-    justifyContent: 'flex-start',
+    // justifyContent: 'flex-start',
     // flexShrink: 1, // allow inner content to grow
   },
 });

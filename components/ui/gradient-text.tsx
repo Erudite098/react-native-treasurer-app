@@ -18,7 +18,7 @@ export default function GradientText({
   const fontMap = {
     Regular: 'Karla-Regular',
     SemiBold: 'Karla-SemiBold',
-    Bold: 'Karla-Bold',
+
   };
 
   return (
@@ -46,7 +46,7 @@ export default function GradientText({
           style={[
             styles.baseText,
             { fontSize, fontFamily: fontMap[fontWeight], opacity: 0 },
-            style,
+            style
           ]}
         >
           {text}
