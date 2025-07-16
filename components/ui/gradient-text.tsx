@@ -1,6 +1,8 @@
-// import MaskedView from '@react-native-masked-view/masked-view';
+// TODO: Make sure the width of the bg color 
+// is the same as the text width
+import MaskedView from '@react-native-masked-view/masked-view';
 import { LinearGradient } from 'expo-linear-gradient';
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, TextProps } from 'react-native';
 
 interface GradientTextProps extends TextProps {
@@ -16,7 +18,6 @@ export default function GradientText({
   style,
   ...props
 }: GradientTextProps) {
-  const [textWidth, setTextWidth] = useState(0);
 
   const fontMap = {
     Regular: 'Karla-Regular',
@@ -25,27 +26,27 @@ export default function GradientText({
   };
 
   return (
-    // <MaskedView
-    //   style={{ width: textWidth }}
-    //   maskElement={
-    //     <Text
-    //       {...props}
-    //       style={[
-    //         styles.baseText,
-    //         { fontSize, fontFamily: fontMap[fontWeight], color: 'black' },
-    //         style,
-    //       ]}
-    //       onLayout={e => setTextWidth(e.nativeEvent.layout.width)}
-    //     >
-    //       {text}
-    //     </Text>
-    //   }
-    // >
+    <MaskedView
+      style={{ width: '100%' }}
+      maskElement={
+        <Text
+          {...props}
+          style={[
+            styles.baseText,
+            { fontSize, fontFamily: fontMap[fontWeight], color: 'black' },
+            style,
+          ]}
+         
+        >
+          {text}
+        </Text>
+      }
+    >
       <LinearGradient
         colors={['#D8125A', '#E88AB0', '#CB6190', '#D8125A']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
-        style={{ width: textWidth }}
+        style={{ width: '100%' }}
       >
         <Text
           {...props}
@@ -58,7 +59,7 @@ export default function GradientText({
           {text}
         </Text>
       </LinearGradient>
-    // </MaskedView> 
+    </MaskedView> 
   );
 }
 
