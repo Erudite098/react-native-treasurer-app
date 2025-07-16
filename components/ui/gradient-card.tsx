@@ -1,4 +1,3 @@
-// components/GradientCard.tsx
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   content: {
-    // justifyContent: 'flex-start',
-    // flexShrink: 1, // allow inner content to grow
+    justifyContent: 'flex-start',
+    flexShrink: 1, // allow inner content to grow
   },
 });
