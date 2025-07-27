@@ -11,7 +11,6 @@ export default function CardComponent() {
     return (
         <View>
             <Image source={require('@/assets/images/pig.png')} style={styles.pigImage} />
-           
             {/* Card will sit within the 23px padded area */}
             <GradientCard >
                 <View>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     position: 'absolute',
-    right: 35,
+    right: 10,
     top: 0,
     zIndex: 1,
   }
