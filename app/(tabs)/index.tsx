@@ -1,3 +1,4 @@
+import { initDatabase } from '@/database/sqlite-setup';
 import { useFonts } from 'expo-font';
 import { useEffect, useState } from 'react';
 import { Text as RNText } from 'react-native';
@@ -18,6 +19,17 @@ export default function Index() {
     (RNText as any).defaultProps = (RNText as any).defaultProps || {};
     (RNText as any).defaultProps.style = { fontFamily: 'Karla-Regular' };
   }
+
+  // Initialize database
+  useEffect(() => {
+    initDatabase()
+    .then(() => {
+      console.log('Database initialized');
+    })
+    .catch((error) => {
+      console.error('Error initializing database:', error);
+    });
+  }, []);
 
 
   useEffect(() => {
