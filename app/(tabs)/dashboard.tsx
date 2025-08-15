@@ -1,34 +1,42 @@
 import CardComponent from '@/components/grouped-components/card-component';
+import GradientBottomSheet from '@/components/individual-component/gradient-bottom-sheet';
 import GradientFab from '@/components/individual-component/gradient-fab';
 import Container from '@/components/layout/container';
 import Header from '@/components/layout/header';
 import { Plus } from 'lucide-react-native';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
 export default function Dashboard() {
   return (
-    
     <View style={styles.container}>
+      {/* Status Bar Configuration */}
+      <StatusBar 
+        backgroundColor="#E88AB0" 
+        barStyle="light-content" 
+      />
+      
       {/* Header */}
       <Header text="Treasurer" fontWeight="extrabold"  />
-      <Text style={styles.paymentDashboard}>Payment Dashboard</Text>
+
+     
     
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+         <Text style={styles.paymentDashboard}>Payment Dashboard</Text>
         <Container>
+  
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <GradientBottomSheet />
       
-          <CardComponent />
-          <CardComponent />
-          <CardComponent />
-     
         </Container> 
       </ScrollView>
 
       {/* FAB positioned absolutely in bottom right */}
       <GradientFab 
         onPress={() => {}}
-        icon={<Plus size={24} color="white" />}
+        icon={<Plus size={30} color="white" />}
       />
-
     </View>
    
   );
